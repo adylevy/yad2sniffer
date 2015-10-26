@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Yad2 Truth",
+  "description": "Will tell truth on yad2 ads",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "images/i.png"
+
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.yad2.co.il/*","https://www.yad2.co.il/*"],
+      "js": ["scripts/yad2.js"],
+      "css": ["css/client.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    "css/client.css",
+    "images/small_i.png"
+    ],
+  "background":
+    {
+        "scripts": ["bower_components/jquery/dist/jquery.min.js", "bower_components/blueimp-md5/js/md5.js", "bower_components/requirejs/require.js","scripts/background.js"]
+    },
+  "permissions": [
+   "activeTab",
+    "tabs",
+    "storage"
+   ]
+}
